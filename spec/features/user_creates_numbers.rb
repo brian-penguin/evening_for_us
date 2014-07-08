@@ -1,10 +1,8 @@
 require 'rails_helper'
 
 feature 'User creates numbers' do
-  background do
-    visit new_number_path
-    click_link 'Add Mobile Number'
-  end
+  visit root_path
+  click_link 'Add Mobile Number'
 
   scenario 'successfully' do
     other_junk = create(:number)
