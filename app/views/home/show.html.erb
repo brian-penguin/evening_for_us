@@ -1,7 +1,15 @@
 <div class='jumbotron'>
   <h1> Evening For Us </h1>
-  <%= link_to 'Login',new_user_session_path,  class:'btn btn-primary'%>
-  <%= link_to 'Sign Up', new_user_registration_path, class:'btn btn-primary'%>
+  <% if user_signed_in?%>
+    Logged in as <strong><%= current_user.email %></strong>.
+    <%= link_to "Home", root_path %> |
+    <%= link_to 'Edit profile', edit_user_registration_path %> |
+    <%= link_to "Logout", destroy_user_session_path, method: :delete %> |
+
+  <% else %>
+    <%= link_to 'Login',new_user_session_path,  class:'btn btn-primary'%>
+    <%= link_to 'Sign Up', new_user_registration_path, class:'btn btn-primary'%>
+  <%end%>
 </div>
 
 This is my example of our fourth week project. Evening For Us is a web app that lets the user find evening plans for themselves through yelp reviews of restaurants, bars, and night clubs. They can then send preconstructed messages to their friends with the address, time, and rating.
