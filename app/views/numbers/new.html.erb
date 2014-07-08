@@ -2,8 +2,8 @@
 <div class='jumbotron'>
 <h2> Add a Number! </h2><br>
   <%= simple_form_for @number do |f| %>
+    <%= f.input :name, place: 'Mr. Friend', label:'Your Friends Name'%><br>
     <%= f.input :number, label:'Your Friends Number' %><br>
-    <%= f.input :name, place: 'Mr. Friend'%><br>
     <%= f.button :submit %>
   <% end %>
 </div>
