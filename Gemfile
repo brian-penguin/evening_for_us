@@ -37,6 +37,7 @@ gem 'spring',        group: :development
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+gem 'rails_12factor', group: :production
 
 gem 'devise'
 
@@ -55,3 +56,5 @@ group :test do
   gem 'poltergeist'
   gem 'shoulda-matchers'
 end
+
+gem 'simple_form'

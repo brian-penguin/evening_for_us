@@ -7,7 +7,7 @@ class NumbersController <ApplicationController
   end
 
   def new
-
+    @number = Number.new
   end
 
   def create
