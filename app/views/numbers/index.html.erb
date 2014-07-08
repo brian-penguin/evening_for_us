@@ -1,0 +1,11 @@
+<%= link_to 'Home', root_path %>
+<div class='jumbotron'>
+  <h3> My Numbers </h3>
+
+  <ul>
+  <% current_user.numbers.each do |number| %>
+    <li> <%= number.name %> | <%= number.number %> </li>
+  <% end %>
+  </ul>
+
+</div>
