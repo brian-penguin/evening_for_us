@@ -1,10 +1,12 @@
 
 <div class='jumbotron'>
 <h2> Add a Number! </h2><br>
-  <%= simple_form_for @number do |f| %>
-    <%= f.input :name, place: 'Mr. Friend', label:'Your Friends Name'%><br>
-    <%= f.input :number, label:'Your Friends Number' %><br>
-    <%= f.button :submit %>
+  <%= form_for @number do |f| %>
+    <%= f.label :name %> <br>
+    <%= f.text_field :name %> <br>
+    <%= f.label :number %> <br>
+    <%= f.text_field :number %> <br> <br>
+    <%= f.submit 'Add Number' %>
   <% end %>
 </div>
 

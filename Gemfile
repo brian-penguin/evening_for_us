@@ -57,4 +57,4 @@ group :test do
   gem 'shoulda-matchers'
 end
 
-gem 'simple_form'
+#gem 'simple_form'
