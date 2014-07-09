@@ -15,7 +15,7 @@ class PlacesController <ApplicationController
     #if the user has given all the data then do
 
       # In the search User will give City, State, and term
-      request = Location.new(city: city, state: state, radius: 1, category:['arts','nightlife'], term: term)
+      request = Location.new(city: city, state: state, radius: 2, category:['arts','nightlife'], term: term)
       # Gets a Hash of forty businesses
       response = @client.search(request)
       @places = response['businesses']
