@@ -15,21 +15,18 @@ class NumbersController <ApplicationController
 
     if @number.save
       flash[:notice] = 'Number added!'
-      redirect_to root_path
+      redirect_to numbers_path
     else
       flash.now[:alert] = @number.errors.full_messages.join(', ')
       render :new
     end
-
   end
 
-  def edit
-  end
+  def destroy
+    @number = Number.find(params[:id])
+    @number.destroy
 
-  def update
-  end
-
-  def delete
+    redirect_to numbers_path, notice: "That's fine didn't like them much anyways"
   end
 
   private

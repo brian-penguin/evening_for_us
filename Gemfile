@@ -40,6 +40,8 @@ gem 'spring',        group: :development
 gem 'rails_12factor', group: :production
 
 gem 'devise'
+gem 'twilio-ruby'
+gem 'yelpster'
 
 group :development, :test do
   gem 'factory_girl_rails'

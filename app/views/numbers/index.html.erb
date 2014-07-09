@@ -4,7 +4,11 @@
 
   <ul>
   <% current_user.numbers.each do |number| %>
-    <li> <%= number.name %> | <%= number.number %> </li>
+    <li>
+    <%= number.name %> |
+    <%= number.number %> |
+    <%= link_to 'Delete', number_path(number), method: 'delete', confirm: 'Are you sure?' %>
+    </li>
   <% end %>
   </ul>
 
