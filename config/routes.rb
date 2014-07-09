@@ -4,4 +4,6 @@ Rails.application.routes.draw do
   resources :numbers, only:[:index, :new, :create, :destroy]
 
   root 'home#show'
+
+  post '/places/search' => 'places#search'
 end

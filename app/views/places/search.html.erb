@@ -1,0 +1,16 @@
+<ol>
+<% @places.each do |place| %>
+  <li>
+    <h4><%= link_to place['name'], place['url'] %></h4><br>
+    <img src=<%= place['image_url']%>><br>
+    <img src=<%= place['rating_img_url'] %> </img>
+    <h5>From <%= place['review_count'] %> Reviews</h5>
+    <%= place['snippet_text'] %> <br>
+    <%= place['location']['display_address'][0] %>,
+    <%= place['location']['display_address'][1] %>
+    <%= place['location']['display_address'][2] %>
+    <br>
+    <br>
+  </li>
+<% end %>
+</ol>
