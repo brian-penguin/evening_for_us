@@ -6,9 +6,19 @@
     <%= link_to 'Edit profile', edit_user_registration_path %> |
     <%= link_to "Logout", destroy_user_session_path, method: :delete %> |
      <%= link_to 'Add Mobile Number', new_number_path %> |
-     <%= link_to 'My Numbers', numbers_path %> |
+     <%= link_to 'My Numbers', numbers_path %>
+     <br>
+     <br>
 
-     <%= link_to 'Search', places_search_path, method:'post'%>
+     <%= form_tag('/places/search', method:'post') do %>
+     <h3> Find
+       <%= text_field_tag :term, params[:term], placeholder: "Cheap food, drinks, dancing...", class: "form-control" %>
+       In your city
+       <%= text_field_tag :city, params[:city], placeholder: 'Your City', class: 'form-control' %>
+       By state code (two letter uppercase)
+       <%= text_field_tag :state, params[:state], placeholder: "State code", class: 'form-control' %>
+       <%= submit_tag "Search", class: 'btn btn-default', name: nil %></h3>
+     <% end %>
     <br>
     <br>
 
