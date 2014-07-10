@@ -1,0 +1,17 @@
+
+<% place = params[:location] %>
+
+<h3> Send To Friends </h3>
+<h4> Check which friends you want to send to! </h4>
+
+<%= form_tag('/messages/new', method: 'get') do %>
+  <% hidden_field_tag place: place %>
+  <%= text_field_tag :time, params[:time], placeholder: '6pm, 8pm, right now'%><br><br>
+
+  <% current_user.numbers.each do |number| %>
+    <%= check_box_tag 'number.id[]', number.id %>
+    <%= label_tag number.name %><br>
+  <% end %>
+  <br>
+  <%= submit_tag 'Send msg', class: 'btn btn-default', name: nil %>
+<% end %>

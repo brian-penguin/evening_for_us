@@ -1,46 +1,31 @@
 <div class='container'>
-<div class='row-fluid'>
-  <div class='span6 offset2'>
-    <table class="table table-hover">
-        <thead></thead>
-        <tbody>
-        <% @places.each do |place| %>
-          <tr><td>
-            <h4><%= link_to place['name'], place['url'] %></h4><br>
-            <img src=<%= place['image_url']%>><br>
-            <img src=<%= place['rating_img_url'] %> </img>
-            <h5>From <%= place['review_count'] %> Reviews</h5>
-            <%= place['snippet_text'] %> <br>
-            <%= place['location']['display_address'][0] %>,
-            <%= place['location']['display_address'][1] %>
-            <%= place['location']['display_address'][2] %>
-            <% if place['is_closed'] == false %>
-              <p> Open now!</p>
-            <%else%>
-              <p> Not open now</p>
-            <%end%>
-        <!--     <#%= link_to 'Send to Friends', #####PATH NAME, location: place
-         -->
-            <br>
-            <br>
-         </td> </tr>
-        <% end %>
+  <div class='row-fluid'>
+    <div class='span6 offset2'>
+      <table class="table table-hover">
+          <thead></thead>
+          <tbody>
+          <% @places.each do |place| %>
+            <tr><td>
+              <h4><%= link_to place['name'], place['url'] %></h4><br>
+              <img src=<%= place['image_url']%>><br>
+              <img src=<%= place['rating_img_url'] %> </img>
+              <h5>From <%= place['review_count'] %> Reviews</h5>
+              <%= place['snippet_text'] %> <br>
+              <%= place['location']['display_address'][0] %>,
+              <%= place['location']['display_address'][1] %>
+              <%= place['location']['display_address'][2] %>
+              <% if place['is_closed'] == false %>
+                <p> Open now!</p>
+              <%else%>
+                <p> Not open now</p>
+              <%end%>
+              <%= link_to 'Send to Friends', messages_new_path, location: place %>
+              <br>
+              <br>
+            </td> </tr>
+          <% end %>
         </tbody>
-
-      </div>
-    </table>
-      <caption>table title and/or explanatory text</caption>
-      <thead>
-        <tr>
-          <th>header</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>data</td>
-        </tr>
-      </tbody>
-    </table>>
-
-</div>
+      </table>
+    </div>
+  </div>
 </div>
