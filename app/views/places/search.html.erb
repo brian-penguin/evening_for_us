@@ -19,7 +19,7 @@
               <%else%>
                 <p> Not open now</p>
               <%end%>
-              <%= link_to 'Send to Friends', messages_new_path, location: place %>
+              <%= link_to 'Send to Friends', messages_new_path(:location => place) %>
               <br>
               <br>
             </td> </tr>

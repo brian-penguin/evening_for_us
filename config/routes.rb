@@ -7,4 +7,5 @@ Rails.application.routes.draw do
 
   post '/places/search' => 'places#search'
   get '/messages/new' => 'messages#new'
+  post '/messages/create' => 'messages#create'
 end

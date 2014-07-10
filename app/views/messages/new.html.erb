@@ -4,12 +4,12 @@
 <h3> Send To Friends </h3>
 <h4> Check which friends you want to send to! </h4>
 
-<%= form_tag('/messages/new', method: 'get') do %>
-  <% hidden_field_tag place: place %>
+<%= form_tag('/messages/create', method: 'post') do %>
+  <%= hidden_field_tag 'place', value: place %>
   <%= text_field_tag :time, params[:time], placeholder: '6pm, 8pm, right now'%><br><br>
 
   <% current_user.numbers.each do |number| %>
-    <%= check_box_tag 'number.id[]', number.id %>
+    <%= check_box_tag :number_number, number.number %>
     <%= label_tag number.name %><br>
   <% end %>
   <br>
