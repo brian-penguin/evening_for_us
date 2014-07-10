@@ -6,7 +6,7 @@
   <%= hidden_field_tag(:name, params[:name]) %>
   <%= hidden_field_tag(:street,params[:street]) %>
   <%= hidden_field_tag(:city_state,params[:city_state]) %>
-  <%= text_field_tag :time, params[:time], placeholder: '6pm, 8pm, right now'%><br><br>
+  <%= text_field_tag :time, params[:time], placeholder: '6pm, 8pm, right now', required: true%><br><br>
 
   <% current_user.numbers.each do |number| %>
     <%= check_box_tag 'number_number[]', number.number %>

@@ -12,11 +12,11 @@
 
      <%= form_tag('/places/search', method:'post') do %>
      <h3> Find
-       <%= text_field_tag :term, params[:term], placeholder: "Cheap food, drinks, dancing...", class: "form-control" %>
+       <%= text_field_tag :term, params[:term], placeholder: "Cheap food, drinks, dancing...", class: "form-control",required: true %>
        In your city
-       <%= text_field_tag :city, params[:city], placeholder: 'Boston, New York, Portland ...', class: 'form-control' %>
+       <%= text_field_tag :city, params[:city], placeholder: 'Boston, New York, Portland ...', class: 'form-control', required: true %>
        By state code (two letter uppercase)
-       <%= text_field_tag :state, params[:state], placeholder: "MA, NY, ME, CT, HI...", class: 'form-control' %>
+       <%= text_field_tag :state, params[:state], placeholder: "MA, NY, ME, CT, HI...", class: 'form-control', required: true%>
        <%= submit_tag "Search", class: 'btn btn-default', name: nil %></h3>
      <% end %>
     <br>
