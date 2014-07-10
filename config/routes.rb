@@ -6,6 +6,6 @@ Rails.application.routes.draw do
   root 'home#show'
 
   post '/places/search' => 'places#search'
-  get '/messages/new' => 'messages#new'
   post '/messages/create' => 'messages#create'
+  post '/messages/get_info' => 'messages#get_info'
 end

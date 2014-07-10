@@ -19,7 +19,14 @@
               <%else%>
                 <p> Not open now</p>
               <%end%>
-              <%= link_to 'Send to Friends', messages_new_path(:location => place) %>
+              <!-- <%#= link_to 'Send to Friends', messages_new_path(:location => place) %> -->
+
+              <%= form_tag("/messages/get_info") do %>
+                <%= hidden_field_tag(:name, place['name']) %>
+                <%= hidden_field_tag(:street, place['location']['display_address'][0]) %>
+                <%= hidden_field_tag(:city_state, place['location']['display_address'][1]) %>
+                <%= submit_tag("Send to Friends") %>
+              <% end %>
               <br>
               <br>
             </td> </tr>
