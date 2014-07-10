@@ -62,4 +62,5 @@ end
 gem 'simple_form'
 
 gem 'dotenv'
+gem 'thin'
 
