@@ -1,38 +1,39 @@
 <div class='container'>
   <div class='row-fluid'>
-    <div class='span6 offset2'>
-      <table class="table table-hover">
-          <thead></thead>
-          <tbody>
-          <% @places.each do |place| %>
-            <tr><td>
-              <h4><%= link_to place['name'], place['url'] %></h4><br>
-              <img src=<%= place['image_url']%>><br>
-              <img src=<%= place['rating_img_url'] %> </img>
-              <h5>From <%= place['review_count'] %> Reviews</h5>
-              <%= place['snippet_text'] %> <br>
-              <%= place['location']['display_address'][0] %>,
-              <%= place['location']['display_address'][1] %>
-              <%= place['location']['display_address'][2] %>
-              <% if place['is_closed'] == false %>
-                <p> Open now!</p>
-              <%else%>
-                <p> Not open now</p>
-              <%end%>
-              <!-- <%#= link_to 'Send to Friends', messages_new_path(:location => place) %> -->
+    <div class='col-md-10 col-md-offset-1'>
+      <div class='well'>
+        <table class="table">
+            <thead></thead>
+            <tbody>
+            <% @places.each do |place| %>
+              <tr><td>
+                <h2><%= link_to place['name'], place['url'] %></h2><br>
+                <img src=<%= place['image_url']%>><br>
+                <img src=<%= place['rating_img_url'] %> </img>
+                <h5>From <%= place['review_count'] %> Reviews</h5>
+                <%= place['snippet_text'] %> <br><br>
+                <%= place['location']['display_address'][0] %>,
+                <%= place['location']['display_address'][1] %>
+                <%= place['location']['display_address'][2] %>
+                <% if place['is_closed'] == false %>
+                  <p> Open now!</p>
+                <%else%>
+                  <p> Not open now</p>
+                <%end%>
 
-              <%= form_tag("/messages/get_info") do %>
-                <%= hidden_field_tag(:name, place['name']) %>
-                <%= hidden_field_tag(:street, place['location']['display_address'][0]) %>
-                <%= hidden_field_tag(:city_state, place['location']['display_address'][1]) %>
-                <%= submit_tag("Send to Friends") %>
-              <% end %>
-              <br>
-              <br>
-            </td> </tr>
-          <% end %>
-        </tbody>
-      </table>
+                <%= form_tag("/messages/get_info") do %>
+                  <%= hidden_field_tag(:name, place['name']) %>
+                  <%= hidden_field_tag(:street, place['location']['display_address'][0]) %>
+                  <%= hidden_field_tag(:city_state, place['location']['display_address'][1]) %>
+                  <%= submit_tag "Send to Friends", class: 'btn btn-default btn-lg', name:nil %>
+                <% end %>
+                <br>
+                <br>
+              </td> </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 </div>

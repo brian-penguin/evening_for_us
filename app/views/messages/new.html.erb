@@ -1,18 +1,18 @@
+<div class="well">
+  <h2> Send To Friends </h2>
+  <h4> When do you want to meet?</h4>
 
-<h3> Send To Friends </h3>
-<h4> Check which friends you want to send to! </h4>
-
-<%= form_tag('/messages/create', method: 'post') do %>
-  <%= hidden_field_tag(:name, params[:name]) %>
-  <%= hidden_field_tag(:street,params[:street]) %>
-  <%= hidden_field_tag(:city_state,params[:city_state]) %>
-  <%= text_field_tag :time, params[:time], placeholder: '6pm, 8pm, right now', required: true %><br><br>
-
-  <% current_user.numbers.each do |number| %>
-    <%= check_box_tag 'number_number[]', number.number %>
-    <%= label_tag number.name %><br>
+  <%= form_tag('/messages/create', method: 'post') do %>
+    <%= hidden_field_tag(:name, params[:name]) %>
+    <%= hidden_field_tag(:street,params[:street]) %>
+    <%= hidden_field_tag(:city_state,params[:city_state]) %>
+    <%= text_field_tag :time, params[:time], placeholder: '6pm, 8pm, right now', required: true %><br><br>
+    <h4> Check which friends you want to send to! </h4>
+    <% current_user.numbers.each do |number| %>
+      <%= check_box_tag 'number_number[]', number.number %>
+      <%= label_tag number.name %><br>
+    <% end %>
+    <br>
+    <%= submit_tag 'Send msg', class: 'btn btn-default', name: nil %>
   <% end %>
-
-  <br>
-  <%= submit_tag 'Send msg', class: 'btn btn-default', name: nil %>
-<% end %>
+</div>

@@ -32,8 +32,8 @@ body {
     color: white;
   }
   .container .jumbotron {
-    padding-right: 60px;
-    padding-left: 60px;
+    padding-right: 70px;
+    padding-left: 70px;
     color: white;
     font-family: 'Josefin Sans', sans-serif;
     font-size: 16px;
@@ -46,4 +46,22 @@ body {
     font-family: 'Josefin Sans', sans-serif;
     color: white;
   }
+  .well{
+    margin-top: 30px;
+    background-color: #8A141B;
+    color: white;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 20px;
+    text-align: center;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+  }
+
+  a{
+    font-family: 'Pacifico', cursive;
+    color: #FAFAFB;
+    font-size: 50px;
+  }
+
 }
