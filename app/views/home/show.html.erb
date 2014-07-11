@@ -1,3 +1,4 @@
+
 <div class='jumbotron'>
   <h1> Evening For Us </h1>
   <% if user_signed_in?%>
@@ -7,19 +8,15 @@
 
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
-        <form role="form">
-          <div class="form">
-           <%= form_tag('/places/search', method:'post') do %>
-           <h3> Find
-             <%= text_field_tag :term, params[:term], placeholder: "Cheap food, drinks, dancing...", class: "form-control",required: true %><br>
-             In your city
-             <%= text_field_tag :city, params[:city], placeholder: 'Boston, New York, Portland ...', class: 'form-control', required: true %><br>
-             By state code (two letter uppercase)
-             <%= text_field_tag :state, params[:state], placeholder: "MA, NY, ME, CT, HI...", class: 'form-control', required: true%><br>
-             <%= submit_tag "Search", class: 'btn btn-default btn-lg', name: nil %></h3>
-           <% end %>
-          </div>
-        </form>
+        <%= form_tag('/places/search', method:'post', role: 'form') do %>
+          <h3> Find
+          <%= text_field_tag :term, params[:term], placeholder: "Cheap food, drinks, dancing...", class: "form-control",required: true %><br>
+          In your city
+          <%= text_field_tag :city, params[:city], placeholder: 'Boston, New York, Portland ...', class: 'form-control', required: true %><br>
+          By state code (two letter uppercase)
+          <%= text_field_tag :state, params[:state], placeholder: "MA, NY, ME, CT, HI...", class: 'form-control', required: true%><br>
+          <%= submit_tag "Search", class: 'btn btn-default btn-lg', name: nil %></h3>
+        <% end %>
       </div>
     </div>
     <br>
