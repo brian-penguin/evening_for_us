@@ -2,23 +2,26 @@
   <h1> Evening For Us </h1>
   <% if user_signed_in?%>
     Logged in as <strong><%= current_user.email %></strong>.
-    <%= link_to "Home", root_path %> |
-    <%= link_to 'Edit profile', edit_user_registration_path %> |
-    <%= link_to "Logout", destroy_user_session_path, method: :delete %> |
-     <%= link_to 'Add Mobile Number', new_number_path %> |
-     <%= link_to 'My Numbers', numbers_path %>
      <br>
      <br>
 
-     <%= form_tag('/places/search', method:'post') do %>
-     <h3> Find
-       <%= text_field_tag :term, params[:term], placeholder: "Cheap food, drinks, dancing...", class: "form-control",required: true %>
-       In your city
-       <%= text_field_tag :city, params[:city], placeholder: 'Boston, New York, Portland ...', class: 'form-control', required: true %>
-       By state code (two letter uppercase)
-       <%= text_field_tag :state, params[:state], placeholder: "MA, NY, ME, CT, HI...", class: 'form-control', required: true%>
-       <%= submit_tag "Search", class: 'btn btn-default', name: nil %></h3>
-     <% end %>
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <form role="form">
+          <div class="form">
+           <%= form_tag('/places/search', method:'post') do %>
+           <h3> Find
+             <%= text_field_tag :term, params[:term], placeholder: "Cheap food, drinks, dancing...", class: "form-control",required: true %><br>
+             In your city
+             <%= text_field_tag :city, params[:city], placeholder: 'Boston, New York, Portland ...', class: 'form-control', required: true %><br>
+             By state code (two letter uppercase)
+             <%= text_field_tag :state, params[:state], placeholder: "MA, NY, ME, CT, HI...", class: 'form-control', required: true%><br>
+             <%= submit_tag "Search", class: 'btn btn-default btn-lg', name: nil %></h3>
+           <% end %>
+          </div>
+        </form>
+      </div>
+    </div>
     <br>
     <br>
 

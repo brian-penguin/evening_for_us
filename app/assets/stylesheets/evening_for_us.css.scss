@@ -1,0 +1,49 @@
+body {
+  padding: 10px;
+  background: url('http://i.imgur.com/I1Mjrzv.jpg');
+  background-size: cover;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  opacity: 0.9;
+
+  .navbar{
+    background-color: #8A141B;
+    color: cornsilk;
+  }
+  .navbar-default .navbar-nav>li>a {
+    color: #FCFCFC;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 18px;
+  }
+  .jumbotron {
+    padding: 10px;
+    margin-bottom: 30px;
+    color: inherit;
+    background-color: #8A141B;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+  }
+  .jumbotron h1, .jumbotron .h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: 120px;
+    color: white;
+  }
+  .container .jumbotron {
+    padding-right: 60px;
+    padding-left: 60px;
+    color: white;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 16px;
+  }
+  form{
+    text-align: center;
+  }
+  h3, .h3 {
+    font-size: 24px;
+    font-family: 'Josefin Sans', sans-serif;
+    color: white;
+  }
+}
