@@ -2,6 +2,8 @@ class NumbersController <ApplicationController
 
   before_action :authenticate_user!
 
+  # Basic Crud for Creating, indexing, and destroying numbers.
+
   def index
     @numbers = Number.where(params[:user_id])
   end

@@ -1,28 +1,24 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+HI GUYS!
 
-Things you may want to cover:
+Evening for Us is my first project for General Assembly's WDI June session.
 
-* Ruby version
+The goal of this was to expand knowledge of using API's and Rails in a self-driven
+presentation from start to finish.
 
-* System dependencies
+Some shortfalls of this project are that there is no actual functionality to the
+mass texting unless the number is verfified with my twilio trial account. I didn't
+want to spend 20 dollars to get it working because that's half a weeks groceries
+and I'm a broke recent grad. Another problem was the lack of information given by
+the Yelp api. Which I suspect is done on purpose to drive people to the Yelp site.
 
-* Configuration
+I think the use of hidden form tags was a strong point for this project and it came from
+a lot of learning how to use those and a better understanding of post versus get when
+it comes to passing information.
 
-* Database creation
+In the future I would like to push more of the functionality out of the controller
+and into more of the models and find a way to do validations without storing
+the search data which Yelp doesn't allow.
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Thanks for Visiting!
