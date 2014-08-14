@@ -51,6 +51,8 @@ group :development, :test do
   gem 'rspec-rails'
 end
 
+gem 'bullet', group: :development
+
 group :test do
   gem 'capybara'
   gem 'database_cleaner'
