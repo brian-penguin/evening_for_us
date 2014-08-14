@@ -1,13 +1,13 @@
-class Search
+module Search
   #include the yelp search module
   include Yelp::V2::Search::Request
 
-  def self.set_yelp
+  def set_yelp
     # set up in the config/initializers
     @client = Yelp::Client.new
   end
 
-  def self.send_request(city,state,term)
+  def send_request(city,state,term)
     set_yelp()
     #makes a request to the yelp api
     request = Location.new(city: city, state: state, radius: 2, category:['arts','nightlife'], term: term)
