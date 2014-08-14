@@ -1,5 +1,5 @@
-class Message
-  def self.send_message(msg,numbers)
+module Message
+  def send_message(msg,numbers)
     set_up_twilio()
     # Loops through and sends the message
     numbers.each do |number|
@@ -11,7 +11,7 @@ class Message
     end
   end
 
-  def self.set_up_twilio()
+  def set_up_twilio()
     @client = Twilio::REST::Client.new ENV['TWILIO_SID'], ENV['TWILIO_TOKEN']
   end
 end
