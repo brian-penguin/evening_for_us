@@ -5,16 +5,27 @@
         <table class="table">
             <thead></thead>
             <tbody>
-            <% @places.each do |place| %>
-              <tr><td>
+            <div class="result">
                 <h2><%= link_to place['name'], place['url'] %></h2><br>
                 <img src=<%= place['image_url']%>><br>
                 <img src=<%= place['rating_img_url'] %> </img>
                 <h5>From <%= place['review_count'] %> Reviews</h5>
-                <%= place['snippet_text'] %> <br><br>
+                <%= place['snippet_text'] %> <br>
+                <br>
+                <iframe class="map_iframe"
+                width="70%"
+                height="50%"
+                frameborder="0" style="border:0"
+                src="https://www.google.com/maps/embed/v1/place?key=<%="#{ENV["GOOGLE_MAPS_KEY"]}"%>
+                &q=<%= place['location']['display_address'][0] %>
+                <%= place['location']['display_address'][1] %>
+                <%= place['location']['display_address'][2] %>">
+                </iframe>
+                <br>
                 <%= place['location']['display_address'][0] %>,
                 <%= place['location']['display_address'][1] %>
                 <%= place['location']['display_address'][2] %>
+                <br>
                 <% if place['is_closed'] == false %>
                   <p> Open now!</p>
                 <%else%>
@@ -29,8 +40,7 @@
                 <% end %>
                 <br>
                 <br>
-              </td> </tr>
-            <% end %>
+              </div>
           </tbody>
         </table>
       </div>
